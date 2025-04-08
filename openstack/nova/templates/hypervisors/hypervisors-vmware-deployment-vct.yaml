@@ -33,6 +33,8 @@ template: |
       vcenter: {= host =}
       datacenter: {= availability_zone =}
       vccluster: {= cluster_name =}
+    annotions:
+      uses-service-user: nova
   spec:
     replicas: 1
     revisionHistoryLimit: 5
@@ -55,6 +57,7 @@ template: |
           vcenter: {= host =}
           datacenter: {= availability_zone =}
           vccluster: {= cluster_name =}
+          vcenter-operator-secret-version: {= service_user_version =}
         annotations:
           prometheus.io/scrape: "true"
           prometheus.io/targets: {{ required ".Values.alerts.prometheus missing" .Values.alerts.prometheus | quote }}
