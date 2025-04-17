@@ -336,6 +336,7 @@ drivers:
 
 nsxv3_pw_user: m3apiuser0
 
+#ToDo - Remove this migrated to the new sentry logger
 logging:
   formatters:
     context:
@@ -391,18 +392,8 @@ logging:
       level: WARNING
 
 sapccsentry:
-  # tbd:
   # autointegrations: false
-  enabled:
-    default: false
-    # if a key is set, it will always overwrite
-    # the default above. If the default is missing,
-    # it will itself default to false
-    server: false
-    # tbd:
-    # aci-agent: false
-    # rpc-server: false
-    # ...
+  enabled: false
 
 logging_sapccsentry:
   formatters:
